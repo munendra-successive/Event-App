@@ -4,7 +4,10 @@
   "description": "<h4>1. Update Package Lists: </h4>",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon dist/server.js",
+    "start": "nodemon src/server.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "test": "jest",
     "coverage": "jest --coverage",
     "prepare": "husky install",
@@ -12,9 +15,18 @@
     "lint:fix": "eslint --fix 'src/**/*.ts'",
     "sonarqube": "node sonarqube-scanner.js"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-typescript": "^7.23.3",
+    "@babel/register": "^7.23.7",
     "@superfaceai/one-sdk": "2.4.2",
     "@types/moment-timezone": "^0.5.30",
     "@types/multer": "^1.4.11",
@@ -36,6 +48,8 @@
     "mongoose": "^8.0.3",
     "multer": "^1.4.5-lts.1",
     "pako": "^2.1.0",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.5",
     "swagger": "^0.7.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
