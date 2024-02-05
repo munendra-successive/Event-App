@@ -46,7 +46,7 @@ class Server {
 
     this.app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     this.app.use(
-      "/health-check",
+      "/",
       (req: express.Request, res: express.Response) =>
         res.status(200).send("Health is ok")
     );
