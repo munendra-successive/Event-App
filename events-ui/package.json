@@ -1,0 +1,67 @@
+{
+  "name": "events-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.2",
+    "antd": "^5.12.5",
+    "axios": "^1.6.2",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.4.0",
+    "env-cmd": "^10.1.0",
+    "enzyme": "^3.11.0",
+    "moment": "^2.30.1",
+    "react": "18.2.0",
+    "react-datepicker": "^4.25.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "^6.21.1",
+    "react-scripts": "5.0.1",
+    "sonarqube": "^0.0.1",
+    "sonarqube-scanner": "^3.3.0",
+    "web-vitals": "2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage",
+    "eject": "react-scripts eject",
+    "sonarqube": "node sonarqube-scanner.js"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs",
+      "antd/es/layout/layout": "antd/lib/layout/layout",
+      "antd/es/layout/Sider": "antd/lib/layout/Sider",
+      "antd/es/menu/SubMenu": "antd/lib/menu/SubMenu",
+      "antd/es/input/TextArea": "antd/lib/input/TextArea"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "esm": "^3.2.25"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "author": "",
+  "license": "ISC"
+}
